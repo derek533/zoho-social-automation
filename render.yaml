@@ -2,10 +2,12 @@ services:
   - type: web
     name: zoho-social-poster
     env: node
-    buildCommand: npm install
+    buildCommand: npm install && npx puppeteer browsers install chrome
     startCommand: node zoho-social-rss-poster.js
     envVars:
       - key: ZOHO_EMAIL
         sync: false
       - key: ZOHO_PASSWORD
         sync: false
+      - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
+        value: "false"
