@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: zoho-social-poster
+    env: node
+    buildCommand: npm install
+    startCommand: node zoho-social-rss-poster.js
+    envVars:
+      - key: ZOHO_EMAIL
+        sync: false
+      - key: ZOHO_PASSWORD
+        sync: false
